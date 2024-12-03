@@ -44,20 +44,15 @@ public class CardDeck {
 		
 		return carddeck.get(n);
 	}
-	
-	public void shufflePerfectly() {					//tron bai voi nhau
-		List<Card> pile1 = new ArrayList<>(carddeck.subList(0, (carddeck.size()/2)));
-		List<Card> pile2 = new ArrayList<>(carddeck.subList((carddeck.size()/2), carddeck.size()));
-		carddeck.clear();
-		for (int i = 0; i<pile1.size(); i++) {
-			carddeck.add(pile1.get(i));
-			carddeck.add(pile2.get(i));
-		}
+
+	public void shuffleRandomly() {  // Trộn bài ngẫu nhiên
+		Collections.shuffle(carddeck);
 	}
-	
+
+
 	public static void main(String[] args) {					
 		CardDeck ting = new CardDeck();
-		ting.shufflePerfectly();
+		ting.shuffleRandomly();
 		System.out.println(ting.carddeck);
 	}
 	

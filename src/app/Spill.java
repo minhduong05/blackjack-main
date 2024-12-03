@@ -13,7 +13,7 @@ public class Spill {
 		
 		if (money > 0) {
 			this.cdeck = new CardDeck();
-			cdeck.shufflePerfectly();
+			cdeck.shuffleRandomly();
 			this.spiller = new Spiller(money, cdeck.carddeck.remove(0), cdeck.carddeck.remove(0));
 			this.dealer = new Spiller(0, cdeck.carddeck.remove(0), cdeck.carddeck.remove(0));
 		} else {

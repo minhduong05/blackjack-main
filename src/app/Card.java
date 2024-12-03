@@ -2,8 +2,8 @@ package app;
 
 public class Card {
 	
-	private char suit; 								
-	private int rank; 							
+	private char suit;
+	private int rank;
 	
 	public Card(char suit, int rank) { 					
 		if (!validCard(suit, rank)) {
