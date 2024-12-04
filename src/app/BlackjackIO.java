@@ -8,10 +8,10 @@ import java.util.Scanner;
 public class BlackjackIO implements BlackjackIOInterface{
 	
 	@Override
-	public void save(String filename, String navn, int penger) throws IOException {
+	public void save(String filename, String name, int money) throws IOException {
 		PrintWriter writer = new PrintWriter(filename);
 		
-		String s = String.format("%s,%d", navn, penger);
+		String s = String.format("%s,%d", name, money);
 		
 		writer.print(s);
 		

@@ -68,19 +68,19 @@ public class BlackJackController {
 			enterName.setVisible(true);
 			if (new File("spill1.txt").isFile()) {
 				BlackjackObjectloader l1 = io1.load("spill1.txt");
-				load1.setText(l1.getNavn());
+				load1.setText(l1.getName());
 			}
 			if (new File("spill2.txt").isFile()) {
 				BlackjackObjectloader l2 = io2.load("spill2.txt");
-				load2.setText(l2.getNavn());
+				load2.setText(l2.getName());
 			}
 			if (new File("spill3.txt").isFile()) {
 				BlackjackObjectloader l3 = io3.load("spill3.txt");
-				load3.setText(l3.getNavn());
+				load3.setText(l3.getName());
 			}
 			if (new File("spill4.txt").isFile()) {
 				BlackjackObjectloader l4 = io4.load("spill4.txt");
-				load4.setText(l4.getNavn());
+				load4.setText(l4.getName());
 			}
 		} catch (Exception e) {
 			info.setText(e.getMessage());
@@ -100,19 +100,19 @@ public class BlackJackController {
 			
 			if (new File("spill1.txt").isFile()) {
 				BlackjackObjectloader l1 = io1.load("spill1.txt");
-				load1.setText(l1.getNavn());
+				load1.setText(l1.getName());
 			}
 			if (new File("spill2.txt").isFile()) {
 				BlackjackObjectloader l2 = io2.load("spill2.txt");
-				load2.setText(l2.getNavn());
+				load2.setText(l2.getName());
 			}
 			if (new File("spill3.txt").isFile()) {
 				BlackjackObjectloader l3 = io3.load("spill3.txt");
-				load3.setText(l3.getNavn());
+				load3.setText(l3.getName());
 			}
 			if (new File("spill4.txt").isFile()) {
 				BlackjackObjectloader l4 = io4.load("spill4.txt");
-				load4.setText(l4.getNavn());
+				load4.setText(l4.getName());
 			}
 		} catch (Exception e) {
 			
@@ -522,14 +522,14 @@ public class BlackJackController {
 				return;
 			}
 			BlackjackObjectloader loader = io1.load("spill1.txt");
-			if (loader.getPenger() == 0) {
+			if (loader.getMoney() == 0) {
 				load1.setText("0 penger");
 				tall = "1";
 				return;
 			}
-			load1.setText(loader.getNavn());
+			load1.setText(loader.getName());
 			tall = "1";
-			nyttSpillClick(loader.getNavn(), loader.getPenger());
+			nyttSpillClick(loader.getName(), loader.getMoney());
 			tilbake2.setVisible(false);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -551,15 +551,15 @@ public class BlackJackController {
 				return;
 			}
 			BlackjackObjectloader loader2 = io2.load("spill2.txt");
-			if (loader2.getPenger() == 0) {
+			if (loader2.getMoney() == 0) {
 				load2.setText("0 penger");
 				tall = "2";
 				nyttSpillClick();
 				return;
 			}
-			load2.setText(loader2.getNavn());
+			load2.setText(loader2.getName());
 			tall = "2";
-			nyttSpillClick(loader2.getNavn(), loader2.getPenger());
+			nyttSpillClick(loader2.getName(), loader2.getMoney());
 			tilbake2.setVisible(false);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -581,15 +581,15 @@ public class BlackJackController {
 				return;
 			}
 			BlackjackObjectloader loader3 = io3.load("spill3.txt");
-			if (loader3.getPenger() == 0) {
+			if (loader3.getMoney() == 0) {
 				load3.setText("0 penger");
 				tall = "3";
 				nyttSpillClick();
 				return;
 			}
-			load3.setText(loader3.getNavn());
+			load3.setText(loader3.getName());
 			tall = "3";
-			nyttSpillClick(loader3.getNavn(), loader3.getPenger());
+			nyttSpillClick(loader3.getName(), loader3.getMoney());
 			tilbake2.setVisible(false);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -611,15 +611,15 @@ public class BlackJackController {
 				return;
 			}
 			BlackjackObjectloader loader4 = io4.load("spill4.txt");
-			if (loader4.getPenger() == 0) {
+			if (loader4.getMoney() == 0) {
 				load4.setText("0 penger");
 				tall = "4";
 				nyttSpillClick();
 				return;
 			}
-			load4.setText(loader4.getNavn());
+			load4.setText(loader4.getName());
 			tall = "4";
-			nyttSpillClick(loader4.getNavn(), loader4.getPenger());
+			nyttSpillClick(loader4.getName(), loader4.getMoney());
 			tilbake2.setVisible(false);
 		} catch (Exception e) {
 			e.printStackTrace();

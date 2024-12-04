@@ -2,20 +2,20 @@ package app;
 
 public class BlackjackObjectloader {
 	
-	private int penger;
-	private String navn;
+	private int money;
+	private String name;
 	
-	public BlackjackObjectloader(String navn, int penger) {
-		this.penger = penger;
-		this.navn = navn;
+	public BlackjackObjectloader(String name, int money) {
+		this.money = money;
+		this.name = name;
 	}
 
-	public int getPenger() {
-		return penger;
+	public int getMoney() {
+		return money;
 	}
 
-	public String getNavn() {
-		return navn;
+	public String getName() {
+		return name;
 	}
 	
 
