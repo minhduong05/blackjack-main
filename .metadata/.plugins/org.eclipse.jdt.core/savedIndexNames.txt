@@ -1,0 +1,11 @@
+INDEX VERSION 1.134+C:\Users\ADMIN\eclipse-workspace\blackjack-main\.metadata\.plugins\org.eclipse.jdt.core
+2104791278.index
+3564804995.index
+1310821394.index
+1067094681.index
+457631065.index
+1865797976.index
+2506059344.index
+484422394.index
+3781197423.index
+1411279953.index

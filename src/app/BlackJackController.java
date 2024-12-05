@@ -12,10 +12,10 @@ import javafx.scene.layout.AnchorPane;
 
 public class BlackJackController {
 
-	@FXML private TextField skrivNavn;
-	@FXML private Label spillerSum, dealerSum, outcome, pot, bank, info, bet, navn, writeName, saveInfo;
-	@FXML private ImageView bilde1, bilde2, bilde3, bilde4, bilde5, dbilde1, dbilde2, dbilde3, dbilde4, dbilde5;
-	@FXML private Button zero, en, ti, tjuefem, hundre, femhundre, tipp, hit, stand, tilbake, tilbake2, load, load1, load2, load3, load4, enterName, newGame;
+	@FXML private TextField writeNameField;
+	@FXML private Label spillerSum, dealerSum, outcome, pot, bank, info, bet, name, writeNameLabel, saveInfoLabel;
+	@FXML private ImageView card1, card2, card3, card4, card5, dcard1, dcard2, dcard3, dcard4, dcard5;
+	@FXML private Button zero, one, ten, twentyFive, hundred, fiveHundred, tipp, hit, stand, back, back2, load, load1, load2, load3, load4, enterName, newGame;
 	@FXML private AnchorPane start;
 	private String tall;
 
@@ -25,16 +25,33 @@ public class BlackJackController {
 	BlackjackIO io3 = new BlackjackIO();
 	BlackjackIO io4 = new BlackjackIO();
 
-	public void nyttSpillClick() {
+	public void startNewGameClick() {
 		try {
-			if (skrivNavn.getText().length() == 0) {
+			if (writeNameField.getText().length() == 0) {
 				throw new IllegalArgumentException("Write name");
 			}
 			spill = new Spill(500);
-			bank.setText(Integer.toString(spill.spiller.getMoney()));navn.setText(skrivNavn.getText());
-			bilde1.setImage(null);bilde2.setImage(null);bilde3.setImage(null);bilde4.setImage(null);bilde5.setImage(null);dbilde1.setImage(null);dbilde2.setImage(null);dbilde3.setImage(null);dbilde4.setImage(null);dbilde5.setImage(null);
-			spillerSum.setText("");dealerSum.setText("");skrivNavn.setText("");bet.setText("");info.setText("");pot.setText("");outcome.setText("");
-			tipp.setVisible(false);hit.setVisible(false);stand.setVisible(false);start.setVisible(false);
+			bank.setText(Integer.toString(spill.spiller.getMoney()));
+			name.setText(writeNameField.getText());
+			card1.setImage(null);
+			card2.setImage(null);
+			card3.setImage(null);
+			card4.setImage(null);
+			card5.setImage(null);
+			dcard1.setImage(null);
+			dcard2.setImage(null);
+			dcard3.setImage(null);
+			dcard4.setImage(null);
+			dcard5.setImage(null);
+			spillerSum.setText("");
+			dealerSum.setText("");
+			writeNameField.setText("");
+			bet.setText("");info.setText("");
+			pot.setText("");outcome.setText("");
+			tipp.setVisible(false);
+			hit.setVisible(false);
+			stand.setVisible(false);
+			start.setVisible(false);
 		} catch (Exception e) {
 			info.setText("Write a name");
 		}
@@ -42,29 +59,29 @@ public class BlackJackController {
 
 	public void enterNameClick() {
 		try {
-			if (skrivNavn.getText().length() == 0) {
+			if (writeNameField.getText().length() == 0) {
 				throw new IllegalArgumentException("Write a name");
 			}
-			skrivNavn.setVisible(false);
-			writeName.setVisible(false);
+			writeNameField.setVisible(false);
+			writeNameLabel.setVisible(false);
 			enterName.setVisible(false);
 			load1.setVisible(true);
 			load2.setVisible(true);
 			load3.setVisible(true);
 			load4.setVisible(true);
 			load.setVisible(false);
-			saveInfo.setVisible(true);
+			saveInfoLabel.setVisible(true);
 		} catch (Exception e) {
 			info.setText(e.getMessage());
 		}
 	}
-	
+
 	public void newGameClick() {
 		try {
 			newGame.setVisible(false);
 			load.setVisible(false);
-			skrivNavn.setVisible(true);
-			writeName.setVisible(true);
+			writeNameField.setVisible(true);
+			writeNameLabel.setVisible(true);
 			enterName.setVisible(true);
 			if (new File("spill1.txt").isFile()) {
 				BlackjackObjectloader l1 = io1.load("spill1.txt");
@@ -85,9 +102,9 @@ public class BlackJackController {
 		} catch (Exception e) {
 			info.setText(e.getMessage());
 		}
-		
+
 	}
-	
+
 	public void clickLoad() {
 		try {
 			load1.setVisible(true);
@@ -96,8 +113,8 @@ public class BlackJackController {
 			load4.setVisible(true);
 			load.setVisible(false);
 			newGame.setVisible(false);
-			tilbake2.setVisible(true);
-			
+			back2.setVisible(true);
+
 			if (new File("spill1.txt").isFile()) {
 				BlackjackObjectloader l1 = io1.load("spill1.txt");
 				load1.setText(l1.getName());
@@ -115,20 +132,38 @@ public class BlackJackController {
 				load4.setText(l4.getName());
 			}
 		} catch (Exception e) {
-			
+
 		}
 	}
 
-	public void nyttSpillClick(String navn, int peng) {
+	public void startNewGameClick(String name, int money) {
 		try {
-			if (navn == null || navn== "") {
+			if (name == null || name== "") {
 				throw new IllegalArgumentException("No load available");
 			}
-			spill = new Spill(peng);
-			bank.setText(Integer.toString(spill.spiller.getMoney()));this.navn.setText(navn);
-			bilde1.setImage(null);bilde2.setImage(null);bilde3.setImage(null);bilde4.setImage(null);bilde5.setImage(null);dbilde1.setImage(null);dbilde2.setImage(null);dbilde3.setImage(null);dbilde4.setImage(null);dbilde5.setImage(null);
-			spillerSum.setText("");dealerSum.setText("");skrivNavn.setText("");bet.setText("");info.setText("Welcome back!");pot.setText("");outcome.setText("");
-			tipp.setVisible(false);hit.setVisible(false);stand.setVisible(false);start.setVisible(false);
+			spill = new Spill(money);
+			bank.setText(Integer.toString(spill.spiller.getMoney()));this.name.setText(name);
+			card1.setImage(null);
+			card2.setImage(null);
+			card3.setImage(null);
+			card4.setImage(null);
+			card5.setImage(null);
+			dcard1.setImage(null);
+			dcard2.setImage(null);
+			dcard3.setImage(null);
+			dcard4.setImage(null);
+			dcard5.setImage(null);
+			spillerSum.setText("");
+			dealerSum.setText("");
+			writeNameField.setText("");
+			bet.setText("");
+			info.setText("Welcome back!");
+			pot.setText("");
+			outcome.setText("");
+			tipp.setVisible(false);
+			hit.setVisible(false);
+			stand.setVisible(false);
+			start.setVisible(false);
 		} catch (Exception e) {
 			info.setText("No load");
 		}
@@ -146,14 +181,14 @@ public class BlackJackController {
 			pot.setText(bet.getText());
 			bet.setText("");
 			Image b1 = new Image("/app/kort/" + spill.spiller.getCard1().toString() + ".png");
-			bilde1.setImage(b1);
+			card1.setImage(b1);
 			Image b2 = new Image("/app/kort/" + spill.spiller.getCard2().toString() + ".png");
-			bilde2.setImage(b2);
+			card2.setImage(b2);
 			Image bd1 = new Image("/app/kort/" + spill.dealer.getCard1().toString() + ".png");
-			dbilde1.setImage(bd1);
+			dcard1.setImage(bd1);
 			Image bak = new Image("/app/kort/bakside.png");
-			dbilde2.setImage(bak);
-			bilde3.setImage(null);bilde4.setImage(null);bilde5.setImage(null);dbilde3.setImage(null);dbilde4.setImage(null);dbilde5.setImage(null);
+			dcard2.setImage(bak);
+			card3.setImage(null);card4.setImage(null);card5.setImage(null);dcard3.setImage(null);dcard4.setImage(null);dcard5.setImage(null);
 			outcome.setText("");
 			spillerSum.setText(Integer.toString(spill.sumSpiller()));
 			dealerSum.setText("");info.setText("");
@@ -178,17 +213,17 @@ public class BlackJackController {
 				throw new IllegalArgumentException("Place bet first");
 			}
 			spill.drawCard();
-			if (bilde3.getImage() == null) {
+			if (card3.getImage() == null) {
 				Image b3 = new Image("/app/kort/" + spill.card3.toString() + ".png");
-				bilde3.setImage(b3);
+				card3.setImage(b3);
 			}
-			if (bilde4.getImage() == null && spill.card4 != null) {
+			if (card4.getImage() == null && spill.card4 != null) {
 				Image b4 = new Image("/app/kort/" + spill.card4.toString() + ".png");
-				bilde4.setImage(b4);
+				card4.setImage(b4);
 			}
-			if (bilde5.getImage() == null && spill.card5 != null) {
+			if (card5.getImage() == null && spill.card5 != null) {
 				Image b5 = new Image("/app/kort/" + spill.card5.toString() + ".png");
-				bilde5.setImage(b5);
+				card5.setImage(b5);
 			}
 			spillerSum.setText(Integer.toString(spill.sumSpiller()));
 			if (!(spill.sumIsValid())) {
@@ -217,24 +252,24 @@ public class BlackJackController {
 				throw new IllegalArgumentException("Place bet first");
 			}
 			Image bd2 = new Image("/app/kort/" + spill.dealer.getCard2().toString() + ".png");
-			dbilde2.setImage(bd2);
+			dcard2.setImage(bd2);
 			dealerSum.setText(Integer.toString(spill.sumDealer()));
 			while (spill.sumDealer() < 17) {
 				spill.dDrawCard();
-				if (dbilde3.getImage() == null) {
+				if (dcard3.getImage() == null) {
 					Image bd3 = new Image("/app/kort/" + spill.dcard3.toString() + ".png");
-					dbilde3.setImage(bd3);
+					dcard3.setImage(bd3);
 				}
-				if (dbilde4.getImage() == null && spill.dcard4 != null) {
+				if (dcard4.getImage() == null && spill.dcard4 != null) {
 					Image bd4 = new Image("/app/kort/" + spill.dcard4.toString() + ".png");
-					dbilde4.setImage(bd4);
+					dcard4.setImage(bd4);
 				}
-				if (dbilde5.getImage() == null && spill.dcard5 != null) {
+				if (dcard5.getImage() == null && spill.dcard5 != null) {
 					Image bd5 = new Image("/app/kort/" + spill.dcard5.toString() + ".png");
-					dbilde5.setImage(bd5);
+					dcard5.setImage(bd5);
 				}
 				dealerSum.setText(Integer.toString(spill.sumDealer()));
-				if (dbilde5.getImage() != null) {
+				if (dcard5.getImage() != null) {
 					break;
 				}
 			}
@@ -242,14 +277,16 @@ public class BlackJackController {
 				spill.cashout();
 				outcome.setText("You won!");
 				bank.setText(Integer.toString(spill.spiller.getMoney()));
-				info.setText("");pot.setText("");bet.setText("");
+				info.setText("");
+				pot.setText("");bet.setText("");
 				spill = new Spill(spill.spiller.getMoney());
 				hit.setVisible(false);stand.setVisible(false);
 			} else if (spill.isDraw()) {
 				spill.cashout();
 				outcome.setText("It's a draw");
 				bank.setText(Integer.toString(spill.spiller.getMoney()));
-				info.setText("");pot.setText("");bet.setText("");
+				info.setText("");
+				pot.setText("");bet.setText("");
 				spill = new Spill(spill.spiller.getMoney());
 				hit.setVisible(false);stand.setVisible(false);
 			} else {
@@ -271,7 +308,7 @@ public class BlackJackController {
 		}
 	}
 
-	public void clickFemhundre() {
+	public void clickFiveHundred() {
 		try {
 			if (pot.getText() != "") {
 				throw new IllegalArgumentException();
@@ -297,7 +334,7 @@ public class BlackJackController {
 		}
 	}
 
-	public void clickhundre() {
+	public void clickHundred() {
 		try {
 			if (pot.getText() != "") {
 				throw new IllegalArgumentException();
@@ -323,33 +360,7 @@ public class BlackJackController {
 		}
 	}
 
-	public void clickFemti() {
-		try {
-			if (pot.getText() != "") {
-				throw new IllegalArgumentException();
-			}
-			if (Integer.parseInt(bank.getText()) < 50 || pot.getText() != "") {
-				throw new IllegalArgumentException("Too poor...");
-			}
-			if (bet.getText() != "") {
-				int sum = Integer.parseInt(bet.getText())+50;
-				bet.setText(Integer.toString(sum));
-				bank.setText(Integer.toString(Integer.parseInt(bank.getText())-50));
-			} else {
-				bet.setText(Integer.toString(50));
-				bank.setText(Integer.toString(Integer.parseInt(bank.getText())-50));
-			}
-			if (bet.getText().length() != 0) {
-				tipp.setVisible(true);
-			}
-		} catch (Exception e) {
-			if (e.getMessage() == null) {
-			} else {
-			}
-		}
-	}
-
-	public void clickTjuefem() {
+	public void clickTwentyFive() {
 		try {
 			if (pot.getText() != "") {
 				throw new IllegalArgumentException();
@@ -375,7 +386,7 @@ public class BlackJackController {
 		}
 	}
 
-	public void clickTi() {
+	public void clickTen() {
 		try {
 			if (pot.getText() != "") {
 				throw new IllegalArgumentException();
@@ -401,7 +412,7 @@ public class BlackJackController {
 		}
 	}
 
-	public void clickEn() {
+	public void clickOne() {
 		try {
 			if (pot.getText() != "") {
 				throw new IllegalArgumentException();
@@ -443,7 +454,7 @@ public class BlackJackController {
 		}
 	}
 
-	public void tilbake() {
+	public void back() {
 		try {
 			if (hit.isVisible()) {
 				throw new IllegalArgumentException("Play hand first!");
@@ -458,15 +469,15 @@ public class BlackJackController {
 			load3.setVisible(false);
 			load4.setVisible(false);
 			load.setVisible(true);
-			saveInfo.setVisible(false);
-			tilbake2.setVisible(false);
+			saveInfoLabel.setVisible(false);
+			back2.setVisible(false);
 			save();
 		} catch (Exception e) {
 			info.setText(e.getMessage());
 		}
 	}
-	
-	public void tilbake2() {
+
+	public void back2() {
 		try {
 			newGame.setVisible(true);
 			start.setVisible(true);
@@ -475,8 +486,8 @@ public class BlackJackController {
 			load3.setVisible(false);
 			load4.setVisible(false);
 			load.setVisible(true);
-			saveInfo.setVisible(false);
-			tilbake2.setVisible(false);
+			saveInfoLabel.setVisible(false);
+			back2.setVisible(false);
 		} catch (Exception e) {
 			info.setText(e.getMessage());
 		}
@@ -486,19 +497,19 @@ public class BlackJackController {
 	public void save() {
 		try {
 			if (this.tall == "1") {
-				io1.save("spill1.txt", navn.getText(), Integer.parseInt(bank.getText()));
+				io1.save("spill1.txt", name.getText(), Integer.parseInt(bank.getText()));
 				return;
 			}
 			if (this.tall == "2") {
-				io2.save("spill2.txt", navn.getText(), Integer.parseInt(bank.getText()));
+				io2.save("spill2.txt", name.getText(), Integer.parseInt(bank.getText()));
 				return;
 			}
 			if (this.tall == "3") {
-				io3.save("spill3.txt", navn.getText(), Integer.parseInt(bank.getText()));
+				io3.save("spill3.txt", name.getText(), Integer.parseInt(bank.getText()));
 				return;
 			}
 			if (this.tall == "4") {
-				io4.save("spill4.txt", navn.getText(), Integer.parseInt(bank.getText()));
+				io4.save("spill4.txt", name.getText(), Integer.parseInt(bank.getText()));
 				return;
 			}
 		} catch (Exception e) {
@@ -509,118 +520,118 @@ public class BlackJackController {
 
 	public void load1() {
 		try {
-			if (skrivNavn.getText().length() != 0) {
-				load1.setText(skrivNavn.getText());
+			if (writeNameField.getText().length() != 0) {
+				load1.setText(writeNameField.getText());
 				tall = "1";
 				info.setText(tall);
-				nyttSpillClick();
+				startNewGameClick();
 				return;
 			}
 			if(!(new File("spill1.txt").isFile())) {
 				tall ="1";
-				nyttSpillClick();
+				startNewGameClick();
 				return;
 			}
 			BlackjackObjectloader loader = io1.load("spill1.txt");
 			if (loader.getMoney() == 0) {
-				load1.setText("0 penger");
+				load1.setText("0 money");
 				tall = "1";
 				return;
 			}
 			load1.setText(loader.getName());
 			tall = "1";
-			nyttSpillClick(loader.getName(), loader.getMoney());
-			tilbake2.setVisible(false);
+			startNewGameClick(loader.getName(), loader.getMoney());
+			back2.setVisible(false);
 		} catch (Exception e) {
 			e.printStackTrace();
 			info.setText("Can't load");
 		}
 	}
-	
+
 	public void load2() {
 		try {
-			if (skrivNavn.getText().length() != 0){
-				load2.setText(skrivNavn.getText());
+			if (writeNameField.getText().length() != 0){
+				load2.setText(writeNameField.getText());
 				tall = "2";
-				nyttSpillClick();
+				startNewGameClick();
 				return;
 			}
 			if(!(new File("spill2.txt").isFile())) {
 				tall = "2";
-				nyttSpillClick();
+				startNewGameClick();
 				return;
 			}
 			BlackjackObjectloader loader2 = io2.load("spill2.txt");
 			if (loader2.getMoney() == 0) {
-				load2.setText("0 penger");
+				load2.setText("0 money");
 				tall = "2";
-				nyttSpillClick();
+				startNewGameClick();
 				return;
 			}
 			load2.setText(loader2.getName());
 			tall = "2";
-			nyttSpillClick(loader2.getName(), loader2.getMoney());
-			tilbake2.setVisible(false);
+			startNewGameClick(loader2.getName(), loader2.getMoney());
+			back2.setVisible(false);
 		} catch (Exception e) {
 			e.printStackTrace();
 			info.setText("Can't load");
 		}
 	}
-	
+
 	public void load3() {
 		try {
-			if (skrivNavn.getText().length() != 0){
-				load3.setText(skrivNavn.getText());
+			if (writeNameField.getText().length() != 0){
+				load3.setText(writeNameField.getText());
 				tall = "3";
-				nyttSpillClick();
+				startNewGameClick();
 				return;
 			}
 			if(!(new File("spill3.txt").isFile())) {
 				tall = "3";
-				nyttSpillClick();
+				startNewGameClick();
 				return;
 			}
 			BlackjackObjectloader loader3 = io3.load("spill3.txt");
 			if (loader3.getMoney() == 0) {
-				load3.setText("0 penger");
+				load3.setText("0 money");
 				tall = "3";
-				nyttSpillClick();
+				startNewGameClick();
 				return;
 			}
 			load3.setText(loader3.getName());
 			tall = "3";
-			nyttSpillClick(loader3.getName(), loader3.getMoney());
-			tilbake2.setVisible(false);
+			startNewGameClick(loader3.getName(), loader3.getMoney());
+			back2.setVisible(false);
 		} catch (Exception e) {
 			e.printStackTrace();
 			info.setText("Can't load");
 		}
 	}
-	
+
 	public void load4() {
 		try {
-			if (skrivNavn.getText().length() != 0){
-				load4.setText(skrivNavn.getText());
+			if (writeNameField.getText().length() != 0){
+				load4.setText(writeNameField.getText());
 				tall = "4";
-				nyttSpillClick();
+				startNewGameClick();
 				return;
 			}
 			if(!(new File("spill4.txt").isFile())) {
 				tall = "4";
-				nyttSpillClick();
+				startNewGameClick();
 				return;
 			}
 			BlackjackObjectloader loader4 = io4.load("spill4.txt");
 			if (loader4.getMoney() == 0) {
-				load4.setText("0 penger");
+				load4.setText("0 money");
 				tall = "4";
-				nyttSpillClick();
+				startNewGameClick();
 				return;
 			}
 			load4.setText(loader4.getName());
 			tall = "4";
-			nyttSpillClick(loader4.getName(), loader4.getMoney());
-			tilbake2.setVisible(false);
+			startNewGameClick(loader4.getName(), loader4.getMoney());
+			back2.setVisible(false);
 		} catch (Exception e) {
 			e.printStackTrace();
 			info.setText("Can't load");

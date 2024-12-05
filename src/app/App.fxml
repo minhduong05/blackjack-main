@@ -14,7 +14,6 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
 <StackPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.BlackJackController">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #009900; -fx-border-color: #804000;">
@@ -104,16 +103,16 @@
                   <Font name="Candara Bold" size="22.0" />
                </font>
             </Label>
-            <ImageView fx:id="bilde1" fitHeight="115.5" fitWidth="84.7" layoutX="312.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" rotate="-15.0" />
-            <ImageView fx:id="bilde2" fitHeight="115.5" fitWidth="84.7" layoutX="329.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" rotate="-10.0" />
-            <ImageView fx:id="bilde3" fitHeight="115.5" fitWidth="84.7" layoutX="344.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" rotate="-5.0" />
-            <ImageView fx:id="bilde4" fitHeight="115.5" fitWidth="84.7" layoutX="359.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="bilde5" fitHeight="115.5" fitWidth="84.7" layoutX="374.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" rotate="5.0" />
-            <ImageView fx:id="dbilde1" fitHeight="115.5" fitWidth="84.7" layoutX="312.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" rotate="-15.0" />
-            <ImageView fx:id="dbilde2" fitHeight="115.5" fitWidth="84.7" layoutX="329.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" rotate="-10.0" />
-            <ImageView fx:id="dbilde3" fitHeight="115.5" fitWidth="84.7" layoutX="344.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" rotate="-5.0" />
-            <ImageView fx:id="dbilde4" fitHeight="115.5" fitWidth="84.7" layoutX="359.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="dbilde5" fitHeight="115.5" fitWidth="84.7" layoutX="374.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" rotate="5.0" />
+            <ImageView fx:id="card1" fitHeight="115.5" fitWidth="84.7" layoutX="312.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" rotate="-15.0" />
+            <ImageView fx:id="card2" fitHeight="115.5" fitWidth="84.7" layoutX="329.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" rotate="-10.0" />
+            <ImageView fx:id="card3" fitHeight="115.5" fitWidth="84.7" layoutX="344.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" rotate="-5.0" />
+            <ImageView fx:id="card4" fitHeight="115.5" fitWidth="84.7" layoutX="359.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="card5" fitHeight="115.5" fitWidth="84.7" layoutX="374.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" rotate="5.0" />
+            <ImageView fx:id="dcard1" fitHeight="115.5" fitWidth="84.7" layoutX="312.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" rotate="-15.0" />
+            <ImageView fx:id="dcard2" fitHeight="115.5" fitWidth="84.7" layoutX="329.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" rotate="-10.0" />
+            <ImageView fx:id="dcard3" fitHeight="115.5" fitWidth="84.7" layoutX="344.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" rotate="-5.0" />
+            <ImageView fx:id="dcard4" fitHeight="115.5" fitWidth="84.7" layoutX="359.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="dcard5" fitHeight="115.5" fitWidth="84.7" layoutX="374.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" rotate="5.0" />
             <ImageView fitHeight="115.5" fitWidth="84.7" layoutX="486.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@kort/bakside.png" />
@@ -124,44 +123,72 @@
                   <Font name="Candara Italic" size="16.0" />
                </font>
             </Label>
-            <Button fx:id="femhundre" layoutX="121.0" layoutY="247.0" mnemonicParsing="false" onAction="#clickFemhundre" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 100; -fx-background-color: #846394;" text="\$500" textFill="WHITE">
+            <Button fx:id="fiveHundred" layoutX="117.0" layoutY="248.0" mnemonicParsing="false" onAction="#clickFiveHundred" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 100; -fx-background-color: #4800d9; -fx-padding: 0;" textFill="WHITE">
                <effect>
                   <DropShadow />
                </effect>
                <font>
                   <Font name="Candara Bold" size="14.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="77.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kort/500.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button fx:id="hundre" layoutX="121.0" layoutY="180.0" mnemonicParsing="false" onAction="#clickhundre" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 100; -fx-background-color: #25449B;" text="\$100" textFill="WHITE">
+            <Button fx:id="hundred" layoutX="121.0" layoutY="164.0" mnemonicParsing="false" onAction="#clickHundred" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 100; -fx-background-color: #000000; -fx-padding: 0;" textFill="WHITE">
                <effect>
                   <DropShadow />
                </effect>
                <font>
                   <Font name="Candara Bold" size="14.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="72.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kort/100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button fx:id="tjuefem" layoutX="54.0" layoutY="180.0" mnemonicParsing="false" onAction="#clickTjuefem" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 100; -fx-background-color: #C3383D;" text="\$25" textFill="WHITE">
+            <Button fx:id="twentyFive" layoutX="54.0" layoutY="180.0" mnemonicParsing="false" onAction="#clickTwentyFive" prefHeight="52.0" prefWidth="55.0" style="-fx-background-radius: 100; -fx-background-color: #C3383D; -fx-padding: 0;" textFill="WHITE">
                <effect>
                   <DropShadow />
                </effect>
                <font>
                   <Font name="Candara Bold" size="14.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kort/25.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button fx:id="ti" layoutX="54.0" layoutY="247.0" mnemonicParsing="false" onAction="#clickTi" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 100; -fx-background-color: #22A271;" text="\$10" textFill="WHITE">
+            <Button fx:id="ten" layoutX="52.0" layoutY="250.0" mnemonicParsing="false" onAction="#clickTen" prefHeight="55.0" prefWidth="55.0" style="-fx-background-radius: 100; -fx-background-color: #22A271; -fx-padding: 0;" textFill="WHITE">
                <effect>
                   <DropShadow />
                </effect>
                <font>
                   <Font name="Candara Bold" size="14.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kort/10.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button fx:id="zero" layoutX="10.0" layoutY="252.0" mnemonicParsing="false" onAction="#clickNull" prefHeight="35.0" prefWidth="35.0" style="-fx-background-radius: 100; -fx-background-color: #2C3932;" text="\$0" textFill="WHITE">
+            <Button fx:id="zero" layoutX="10.0" layoutY="252.0" mnemonicParsing="false" onAction="#clickNull" prefHeight="35.0" prefWidth="35.0" style="-fx-background-radius: 100; -fx-background-color: #2C3932;" text="RETURN" textFill="WHITE">
                <effect>
                   <DropShadow />
                </effect>
                <font>
-                  <Font name="Candara Bold" size="14.0" />
+                  <Font name="Candara Bold" size="7.0" />
                </font>
             </Button>
             <Label fx:id="bet" layoutX="55.0" layoutY="319.0" prefHeight="18.0" prefWidth="70.0" textAlignment="CENTER" textFill="WHITE">
@@ -169,15 +196,22 @@
                   <Font name="Candara Bold" size="22.0" />
                </font>
             </Label>
-            <Button fx:id="en" layoutX="10.0" layoutY="200.0" mnemonicParsing="false" onAction="#clickEn" prefHeight="35.0" prefWidth="35.0" style="-fx-background-radius: 100; -fx-background-color: #FCFBFF;" text="\$1">
+            <Button fx:id="one" layoutX="10.0" layoutY="200.0" mnemonicParsing="false" onAction="#clickOne" prefHeight="35.0" prefWidth="35.0" style="-fx-background-radius: 100; -fx-background-color: #FCFBFF; -fx-padding: 0;">
                <effect>
                   <DropShadow />
                </effect>
                <font>
                   <Font name="Candara Bold" size="14.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="44.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kort/1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button fx:id="tilbake" layoutX="14.0" layoutY="22.0" minWidth="59.2" mnemonicParsing="false" onAction="#tilbake" prefHeight="40.0" prefWidth="79.0" style="-fx-background-radius: 100;" text="Back">
+            <Button fx:id="back" layoutX="14.0" layoutY="22.0" minWidth="59.2" mnemonicParsing="false" onAction="#back" prefHeight="40.0" prefWidth="79.0" style="-fx-background-radius: 100;" text="Back">
                <font>
                   <Font name="Candara Italic" size="16.0" />
                </font>
@@ -192,7 +226,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Label fx:id="navn" layoutX="11.0" layoutY="117.0" prefHeight="28.0" prefWidth="174.0" textAlignment="CENTER" textFill="WHITE" underline="true">
+            <Label fx:id="name" layoutX="11.0" layoutY="117.0" prefHeight="28.0" prefWidth="174.0" textAlignment="CENTER" textFill="WHITE" underline="true">
                <font>
                   <Font name="Candara" size="22.0" />
                </font>
@@ -224,12 +258,12 @@
                   </Lighting>
                </effect>
             </Button>
-            <TextField fx:id="skrivNavn" layoutX="257.0" layoutY="295.0" prefHeight="26.0" prefWidth="79.0" visible="false">
+            <TextField fx:id="writeNameField" layoutX="257.0" layoutY="295.0" prefHeight="26.0" prefWidth="79.0" visible="false">
                <font>
                   <Font name="Candara" size="14.0" />
                </font>
             </TextField>
-            <Label fx:id="writeName" layoutX="201.0" layoutY="287.0" prefHeight="44.0" prefWidth="55.0" text="Name:" textAlignment="CENTER" textFill="WHITE" visible="false">
+            <Label fx:id="writeNameLabel" layoutX="201.0" layoutY="287.0" prefHeight="44.0" prefWidth="55.0" text="Name:" textAlignment="CENTER" textFill="WHITE" visible="false">
                <font>
                   <Font name="Candara" size="16.0" />
                </font>
@@ -324,12 +358,12 @@
                   </Lighting>
                </effect>
             </Button>
-            <Label fx:id="saveInfo" alignment="CENTER" layoutX="171.0" layoutY="297.0" prefHeight="44.0" prefWidth="254.0" text="Choose a save to overwrite:" textAlignment="CENTER" textFill="WHITE" visible="false">
+            <Label fx:id="saveInfoLabel" alignment="CENTER" layoutX="171.0" layoutY="297.0" prefHeight="44.0" prefWidth="254.0" text="Choose a save to overwrite:" textAlignment="CENTER" textFill="WHITE" visible="false">
                <font>
                   <Font name="Candara" size="16.0" />
                </font>
             </Label>
-            <Button fx:id="tilbake2" layoutX="20.0" layoutY="30.0" minWidth="59.2" mnemonicParsing="false" onAction="#tilbake2" prefHeight="40.0" prefWidth="79.0" style="-fx-background-radius: 100;" text="Back" visible="false">
+            <Button fx:id="back2" layoutX="20.0" layoutY="30.0" minWidth="59.2" mnemonicParsing="false" onAction="#back2" prefHeight="40.0" prefWidth="79.0" style="-fx-background-radius: 100;" text="Back" visible="false">
                <font>
                   <Font name="Candara Italic" size="16.0" />
                </font>

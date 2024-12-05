@@ -1,4 +1,4 @@
-package app.backend;
+package app;
 
 public class Spiller {
 	

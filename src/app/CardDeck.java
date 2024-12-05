@@ -1,4 +1,4 @@
-package app.backend;
+package app;
 
 import java.util.ArrayList;
 import java.util.Collections;
