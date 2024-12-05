@@ -1,6 +1,4 @@
-package app;
-
-import java.util.Collections;
+package app.backend;
 
 public class Spill {
 	
@@ -118,7 +116,7 @@ public class Spill {
 		return sum;
 	}
 
-	public int sumSpillerUtenEss() {
+		public int sumSpillerWithoutAces() {
 		int nr1, nr2, nr3, nr4 = 0;
 		if (Integer.parseInt(this.spiller.getCard1().toString().substring(1)) > 10) {
 			nr1 = 10;
@@ -150,7 +148,7 @@ public class Spill {
 		}
 	}
 	
-	public int sumDealerUtenEss() {
+	public int sumDealerWithoutAces() {
 		int nr1, nr2, nr3, nr4 = 0;
 		if (Integer.parseInt(this.dealer.getCard1().toString().substring(1)) > 10) {
 			nr1 = 10;

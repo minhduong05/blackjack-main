@@ -1,11 +1,11 @@
-package app;
+package app.backend;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class BlackjackIO implements BlackjackIOInterface{
+public class BlackjackIO implements BlackjackIOInterface {
 	
 	@Override
 	public void save(String filename, String name, int money) throws IOException {
