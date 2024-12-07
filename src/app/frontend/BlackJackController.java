@@ -2,8 +2,8 @@ package app.frontend;
 
 import java.io.File;
 
-import app.backend.BlackjackIO;
-import app.backend.BlackjackObjectloader;
+import app.backend.BlackJackIO;
+import app.backend.BlackJackObjectloader;
 import app.backend.Spill;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -23,10 +23,10 @@ public class BlackJackController {
 	private String tall;
 
 	Spill spill = null;
-	BlackjackIO io1 = new BlackjackIO();
-	BlackjackIO io2 = new BlackjackIO();
-	BlackjackIO io3 = new BlackjackIO();
-	BlackjackIO io4 = new BlackjackIO();
+	BlackJackIO io1 = new BlackJackIO();
+	BlackJackIO io2 = new BlackJackIO();
+	BlackJackIO io3 = new BlackJackIO();
+	BlackJackIO io4 = new BlackJackIO();
 
 	public void startNewGameClick() {
 		try {
@@ -87,19 +87,19 @@ public class BlackJackController {
 			writeNameLabel.setVisible(true);
 			enterName.setVisible(true);
 			if (new File("spill1.txt").isFile()) {
-				BlackjackObjectloader l1 = io1.load("spill1.txt");
+				BlackJackObjectloader l1 = io1.load("spill1.txt");
 				load1.setText(l1.getName());
 			}
 			if (new File("spill2.txt").isFile()) {
-				BlackjackObjectloader l2 = io2.load("spill2.txt");
+				BlackJackObjectloader l2 = io2.load("spill2.txt");
 				load2.setText(l2.getName());
 			}
 			if (new File("spill3.txt").isFile()) {
-				BlackjackObjectloader l3 = io3.load("spill3.txt");
+				BlackJackObjectloader l3 = io3.load("spill3.txt");
 				load3.setText(l3.getName());
 			}
 			if (new File("spill4.txt").isFile()) {
-				BlackjackObjectloader l4 = io4.load("spill4.txt");
+				BlackJackObjectloader l4 = io4.load("spill4.txt");
 				load4.setText(l4.getName());
 			}
 		} catch (Exception e) {
@@ -119,19 +119,19 @@ public class BlackJackController {
 			back2.setVisible(true);
 
 			if (new File("spill1.txt").isFile()) {
-				BlackjackObjectloader l1 = io1.load("spill1.txt");
+				BlackJackObjectloader l1 = io1.load("spill1.txt");
 				load1.setText(l1.getName());
 			}
 			if (new File("spill2.txt").isFile()) {
-				BlackjackObjectloader l2 = io2.load("spill2.txt");
+				BlackJackObjectloader l2 = io2.load("spill2.txt");
 				load2.setText(l2.getName());
 			}
 			if (new File("spill3.txt").isFile()) {
-				BlackjackObjectloader l3 = io3.load("spill3.txt");
+				BlackJackObjectloader l3 = io3.load("spill3.txt");
 				load3.setText(l3.getName());
 			}
 			if (new File("spill4.txt").isFile()) {
-				BlackjackObjectloader l4 = io4.load("spill4.txt");
+				BlackJackObjectloader l4 = io4.load("spill4.txt");
 				load4.setText(l4.getName());
 			}
 		} catch (Exception e) {
@@ -535,7 +535,7 @@ public class BlackJackController {
 				startNewGameClick();
 				return;
 			}
-			BlackjackObjectloader loader = io1.load("spill1.txt");
+			BlackJackObjectloader loader = io1.load("spill1.txt");
 			if (loader.getMoney() == 0) {
 				load1.setText("0 money");
 				tall = "1";
@@ -564,7 +564,7 @@ public class BlackJackController {
 				startNewGameClick();
 				return;
 			}
-			BlackjackObjectloader loader2 = io2.load("spill2.txt");
+			BlackJackObjectloader loader2 = io2.load("spill2.txt");
 			if (loader2.getMoney() == 0) {
 				load2.setText("0 money");
 				tall = "2";
@@ -594,7 +594,7 @@ public class BlackJackController {
 				startNewGameClick();
 				return;
 			}
-			BlackjackObjectloader loader3 = io3.load("spill3.txt");
+			BlackJackObjectloader loader3 = io3.load("spill3.txt");
 			if (loader3.getMoney() == 0) {
 				load3.setText("0 money");
 				tall = "3";
@@ -624,7 +624,7 @@ public class BlackJackController {
 				startNewGameClick();
 				return;
 			}
-			BlackjackObjectloader loader4 = io4.load("spill4.txt");
+			BlackJackObjectloader loader4 = io4.load("spill4.txt");
 			if (loader4.getMoney() == 0) {
 				load4.setText("0 money");
 				tall = "4";
