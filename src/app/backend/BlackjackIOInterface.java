@@ -1,4 +1,4 @@
-package app;
+package app.backend;
 
 import java.io.IOException;
 

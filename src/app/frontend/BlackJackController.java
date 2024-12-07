@@ -1,7 +1,10 @@
-package app;
+package app.frontend;
 
 import java.io.File;
 
+import app.backend.BlackjackIO;
+import app.backend.BlackjackObjectloader;
+import app.backend.Spill;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;

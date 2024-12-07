@@ -1,4 +1,4 @@
-package app;
+package app.frontend;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,20 +6,14 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
-import javafx.scene.layout.BorderPane;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Screen;
 
 public class App extends Application{
 
 	@Override
 	public void start(final Stage primaryStage) throws Exception {
 
-		Image icon = new Image(App.class.getResourceAsStream("/app/icon.png"));
+		Image icon = new Image(App.class.getResourceAsStream("/app/frontend/icon.png"));
 
 		Scene scene = new Scene(FXMLLoader.load(App.class.getResource("App.fxml")));
 		scene.setFill(Color.BLACK);
